@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+    <title>Aprendendo Django</title>
+</head>
+<body>
+   <p>Esse é o perfil da {{ nome }} </p> 
+    {% if nome == "cachorro" %}
+        <p>Sim, essa é a pagina da Maria</p>
+    {% elif  nome == "gato" %}
+        <p>Essa não é a pagina é de gatos</p>
+    {% else %}
+        <p> essa pagina não é de nd </p>
+    {% endif %}
+    <h1>Nossos dogs</h1>
+    <ul>
+    {% for dog in cachorro %}
+        <li>{{dog}}</li>
+    {% endfor %}
+    </ul>
+
+    {% comment %} <h3>Estamos na aplicação meuapp do projeto thundercats</h3>
+    <input type="button" value="Acesse">
+     {% endcomment %}
+    
+</body>
+</html>
